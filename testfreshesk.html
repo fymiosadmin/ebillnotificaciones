@@ -1,0 +1,128 @@
+<!-- Plantilla de Respuesta Automática - Freshdesk (eBill) -->
+<!-- Diseñada para alta compatibilidad en clientes de correo -->
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f5f7fb; margin:0; padding:0;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:640px; background:#ffffff; border-radius:16px; box-shadow:0 6px 24px rgba(16,24,40,0.08); overflow:hidden;">
+        <!-- Encabezado con logo -->
+        <tr>
+          <td align="center" style="padding:28px 28px 8px 28px;">
+            <img src="LOGO_URL" alt="eBill" width="220" style="display:block; max-width:220px; height:auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+
+        <!-- Frase de marca -->
+        <tr>
+          <td align="center" style="padding:0 28px 8px 28px;">
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:14px; line-height:20px; color:#475467;">
+              <strong style="color:#0b3b66;">Tu socio en transformación digital tributaria</strong>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Separador fino -->
+        <tr>
+          <td style="padding:0 28px;">
+            <div style="height:1px; background:#eef2f7; width:100%;"></div>
+          </td>
+        </tr>
+
+        <!-- Contenido principal -->
+        <tr>
+          <td style="padding:24px 28px 8px 28px; font-family:Inter,Arial,Helvetica,sans-serif; color:#101828;">
+            <div style="font-size:16px; line-height:24px;">
+              Hola {{ticket.requester.name}},
+            </div>
+            <div style="height:8px;"></div>
+            <div style="font-size:15px; line-height:24px; color:#344054;">
+              Hemos recibido tu solicitud de soporte <strong>#{{ticket.id}}</strong> y nuestro equipo ya la está revisando.
+            </div>
+          </td>
+        </tr>
+
+        <!-- Sugerencia rápida (Freddy Answers) -->
+        {% if freddy_answers %}
+        <tr>
+          <td style="padding:12px 28px;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f8fafc; border:1px solid #e6edf5; border-radius:12px;">
+              <tr>
+                <td style="padding:16px; font-family:Inter,Arial,Helvetica,sans-serif;">
+                  <div style="font-size:14px; line-height:20px; color:#0b3b66; font-weight:600; margin-bottom:6px;">
+                    Sugerencia rápida
+                  </div>
+                  <div style="font-size:14px; line-height:20px; color:#475467;">
+                    {{freddy_answers}}
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        {% endif %}
+
+        <!-- Artículos recomendados (Freddy Articles) -->
+        {% if freddy_articles %}
+        <tr>
+          <td style="padding:6px 28px 0 28px;">
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:14px; line-height:20px; color:#0b3b66; font-weight:600; margin-bottom:8px;">
+              Recursos recomendados
+            </div>
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#475467;">
+              {{freddy_articles}}
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+
+        <!-- CTA Centro de ayuda -->
+        <tr>
+          <td align="center" style="padding:20px 28px 8px 28px;">
+            <a href="https://fymtech.notion.site/ayuda?source=copy_link"
+               style="display:inline-block; text-decoration:none; font-family:Inter,Arial,Helvetica,sans-serif; font-size:14px; line-height:20px; font-weight:600; padding:12px 18px; border-radius:10px; background:#0b3b66; color:#ffffff; border:1px solid #0b3b66;">
+              Ir al Centro de Ayuda
+            </a>
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:12px; line-height:18px; color:#667085; margin-top:8px;">
+              Guías paso a paso y preguntas frecuentes.
+            </div>
+          </td>
+        </tr>
+
+        <!-- Cómo continuar -->
+        <tr>
+          <td style="padding:12px 28px 0 28px;">
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#475467;">
+              Si tienes más preguntas, responde a este mensaje y te contactaremos a la brevedad.
+            </div>
+          </td>
+        </tr>
+
+        <!-- Bot feedback -->
+        <tr>
+          <td style="padding:12px 28px 0 28px; font-family:Inter,Arial,Helvetica,sans-serif; font-size:12px; line-height:18px; color:#667085;">
+            {{email_bot_feedback}}
+          </td>
+        </tr>
+
+        <!-- Despedida -->
+        <tr>
+          <td style="padding:18px 28px 24px 28px; font-family:Inter,Arial,Helvetica,sans-serif; color:#344054;">
+            <div style="font-size:14px; line-height:22px;">
+              Atentamente,<br>
+              <strong>{{ticket.portal.name}}</strong>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Pie de página -->
+        <tr>
+          <td align="center" style="background:#f8fafc; padding:16px 20px;">
+            <div style="font-family:Inter,Arial,Helvetica,sans-serif; font-size:11px; line-height:16px; color:#98a2b3;">
+              © {{"now" | date: "%Y"}} eBill. Conectando Negocios, Simplificando Finanzas.
+            </div>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
