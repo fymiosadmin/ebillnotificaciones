@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "Snowflake - Analytics Ventas Mensuales",
+    "_postman_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+    "description": "Colección para validar consultas en Snowflake usando la SQL API v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Query Ventas Mensuales",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/snowflake"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <TU_TOKEN_OAUTH>",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"statement\": \"SELECT * FROM EBILL_PRO.ANALYTICS.V_VENTAS_MENSUALES ORDER BY MONTH\",\n  \"timeout\": 60,\n  \"warehouse\": \"COMPUTE_WH\",\n  \"database\": \"EBILL_PRO\",\n  \"schema\": \"ANALYTICS\",\n  \"role\": \"ACCOUNTADMIN\",\n  \"resultSetMetaData\": {\n    \"format\": \"json\"\n  }\n}"
+        },
+        "url": {
+          "raw": "https://<ACCOUNT>.snowflakecomputing.com/api/v2/statements",
+          "protocol": "https",
+          "host": [
+            "<ACCOUNT>.snowflakecomputing.com"
+          ],
+          "path": [
+            "api",
+            "v2",
+            "statements"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
